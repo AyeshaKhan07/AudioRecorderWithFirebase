@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "792643899707",
+    "project_id": "audiorecorder-4d0c9",
+    "storage_bucket": "audiorecorder-4d0c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792643899707:android:ae348dd16a03be5f0ca71e",
+        "android_client_info": {
+          "package_name": "com.anvilvision.audiorecorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792643899707-uc0o5h1o39dhnq8pdd8ftp9o7837tv5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLSuy_zNLjHK3dDlh50BxkoImtiS-kes8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792643899707-uc0o5h1o39dhnq8pdd8ftp9o7837tv5t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
