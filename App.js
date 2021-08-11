@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AudioRecorderPlayer, {
   AVEncoderAudioQualityIOSType,
   AVEncodingOption,
@@ -27,14 +27,38 @@ import {
   View,
   TextInput,
 } from 'react-native';
-import {Card, Title} from 'react-native-paper';
 import RNFetchBlob from 'rn-fetch-blob';
 import Button from './components/uis/Button';
-import firebase from './database/firebase';
-
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+// import {auth} from './database/firebase';
 const audioRecorderPlayer = new AudioRecorderPlayer();
-
+const db = firebase.firestore();
+const app = firebase.initializeApp({
+  apiKey: 'AIzaSyBhfKz8s7v-rnkhxrKUpvKQ1cux',
+  apiKey: 'AIzaSyBhfKz8s7v-rnkhxrKUpvKQ1cuxlfghHmw',
+  authDomain: 'audiorecorder-4d0c9.firebaseapp.com',
+  projectId: 'audiorecorder-4d0c9',
+  storageBucket: 'audiorecorder-4d0c9.appspot.com',
+  messagingSenderId: '792643899707',
+  appId: '1:792643899707:web:e8e222f367b9b1df0ca71e',
+});
+const auth = app.auth();
+const getData = async () => {
+  const responce = await db.collection('Data').get();
+  if (responce) {
+    responce.forEach(doc => {
+      console.log(doc.data());
+    });
+  }
+};
 const App = () => {
+  useEffect(() => {
+    auth
+      .createUserWithEmailAndPassword('abc123@gmail.com', 'password')
+      .then(() => console.log('success'));
+    getData();
+  }, []);
   const [state, setState] = useState({
     isLoggingIn: false,
     recordSecs: 0,
@@ -44,7 +68,7 @@ const App = () => {
     playTime: '00:00:00',
     duration: '00:00:00',
   });
-  const collection = firebase.firestore().collection('Data');
+  // const collection = firebase.firestore().collection('Data');
 
   const styles = StyleSheet.create({
     container: {
@@ -387,7 +411,7 @@ const App = () => {
             }}
             value={text}
           />
-          <Button
+          {/* <Button
             onPress={() => {
               console.log('writting');
               collection
@@ -399,7 +423,7 @@ const App = () => {
                 .catch(error => console.log(error));
             }}>
             UPLOAD
-          </Button>
+          </Button> */}
         </View>
       </View>
     </SafeAreaView>

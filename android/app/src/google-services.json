@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:792643899707:android:ae348dd16a03be5f0ca71e",
+        "mobilesdk_app_id": "1:792643899707:android:bc3f8b9fd5a758890ca71e",
         "android_client_info": {
-          "package_name": "com.anvilvision.audiorecorder"
+          "package_name": "com.testapp"
         }
       },
       "oauth_client": [
